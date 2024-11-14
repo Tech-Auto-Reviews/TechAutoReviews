@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrousel de Videos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="carrousel-container">
+        <div class="carrousel">
+            <div class="video-slide">
+                <video controls>
+                    <source src="Videos/Bugatti Chiron Super Sport.mp4" type="video/mp4">
+                    Tu navegador no soporta el formato de video.
+                </video>
+            </div>
+            <div class="video-slide">
+                <video controls>
+                    <source src="Videos/Aston Martin Vantage.mp4" type="video/mp4">
+                    Tu navegador no soporta el formato de video.
+                </video>
+            </div>
+            <div class="video-slide">
+                <video controls>
+                    <source src="Videos/Chrysler Pacifica Pinnacle.mp4" type="video/mp4">
+                    Tu navegador no soporta el formato de video.
+                </video>
+            </div>
+            <div class="video-slide">
+                <video controls>
+                    <source src="Videos/Ferrari 488 spider.mp4" type="video/mp4">
+                    Tu navegador no soporta el formato de video.
+                </video>
+            </div>
+            <div class="video-slide">
+                <video controls>
+                    <source src="Videos/Ferrari F8 Tributo.mp4" type="video/mp4">
+                    Tu navegador no soporta el formato de video.
+                </video>
+            </div>
+            <div class="video-slide">
+                <video controls>
+                    <source src="Videos/Koenigsegg Jesko.mp4" type="video/mp4">
+                    Tu navegador no soporta el formato de video.
+                </video>
+            </div>
+            <div class="video-slide">
+                <video controls>
+                    <source src="Videos/Lamborghini Aventador SVJ.mp4" type="video/mp4">
+                    Tu navegador no soporta el formato de video.
+                </video>
+            </div>
+            <div class="video-slide">
+                <video controls>
+                    <source src="Videos/Lamborghini Huracán EVO Spyder.mp4" type="video/mp4">
+                    Tu navegador no soporta el formato de video.
+                </video>
+            </div>
+            <div class="video-slide">
+                <video controls>
+                    <source src="Videos/Lexus LM (Asia).mp4" type="video/mp4">
+                    Tu navegador no soporta el formato de video.
+                </video>
+            </div>
+            <div class="video-slide">
+                <video controls>
+                    <source src="Videos/McLaren 720S Spider.mp4" type="video/mp4">
+                    Tu navegador no soporta el formato de video.
+                </video>
+            </div>
+            <div class="video-slide">
+                <video controls>
+                    <source src="Videos/Mercedes-Benz V-Class Marco Polo.mp4" type="video/mp4">
+                    Tu navegador no soporta el formato de video.
+                </video>
+            </div>
+            <div class="video-slide">
+                <video controls>
+                    <source src="Videos/Toyota Alphard Executive Lounge (Japón).mp4" type="video/mp4">
+                    Tu navegador no soporta el formato de video.
+                </video>
+                
+            </div>
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+<style>
+
+
+    /* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.carrousel-container {
+    position: relative;
+    width: 80%;
+    max-width: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carrousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.video-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+video {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+</style>
+
+
+<script>
+
+
+    // script.js
+let currentIndex = 0;
+
+function moveSlide(direction) {
+    const slides = document.querySelectorAll('.video-slide');
+    const totalSlides = slides.length;
+
+    const currentVideo = slides[currentIndex].querySelector('video');
+    if (currentVideo) {
+        currentVideo.pause(); // Detener el video actual
+    }
+
+    currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+    const newTransformValue = -currentIndex * 100;
+    document.querySelector('.carrousel').style.transform = `translateX(${newTransformValue}%)`;
+}
+
+</script>

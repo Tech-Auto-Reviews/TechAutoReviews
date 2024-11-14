@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Index.css">
+    <title>Página Principal - TechAutoReviews</title>
+<link rel="icon" href="C:\Users\User\Desktop\Enhanced_logion-removebg-preview.png">
+</head>
+<body>
+   
+    <nav class="navbar">
+        <ul>
+            <img src="Imágenes/Icono.png" alt="" width="125px">
+            <li><a href="Index.html">🏠 Inicio</a></li>     l
+            <li><a href="Modelos/Modelos.html">🚗 Modelos</a></li>      l
+            <li><a href="Servicios/Servicios.html">🛠️ Servicios</a></li>     l
+            <li><a href="Quienes somos/Quienes somos.html">🎯Quienes somos</a></li>   l
+            <li><a href="Equipo/Equipo.html">👥Equipo</a></li>           l
+            <li><a href="Contactanos/Contactanos.html">📞 Contactanos</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Bienvenido a Nuestro Mundo Automotriz</h1>
+        <p>Descubre los mejores autos del mercado.</p>
+    </header>
+
+
+    <video autoplay loop muted playsinline class="background-video">
+        <source src="Videos/Fondo.mp4" type="video/mp4">
+        </video>
+  
+  
+     
+<!-- Ícono para abrir el chat -->
+<div id="chat-icon">💬</div>
+
+<!-- Sección del chat, inicialmente oculta -->
+<div id="chat-section" style="display: none;">
+    <div id="chatbox">
+        <div class="message bot">"¡Hola! Soy tu asistente TechAutoReviews 🚗."</div>
+    </div>
+    <input type="text" id="user-input" placeholder="Escribe tu mensaje aquí..." autocomplete="off" />
+    <button id="send-button">Enviar</button>
+</div>
+
+<!-- Sección de reseña al final de la conversación -->
+<div id="review-section" style="display: none;">
+    <p>¿Cómo calificarías esta conversación?</p>
+    <button onclick="leaveReview(5)">⭐️⭐️⭐️⭐️⭐️</button>
+    <button onclick="leaveReview(4)">⭐️⭐️⭐️⭐️</button>
+    <button onclick="leaveReview(3)">⭐️⭐️⭐️</button>
+    <button onclick="leaveReview(2)">⭐️⭐️</button>
+    <button onclick="leaveReview(1)">⭐️</button>
+</div>
+
+<script src="Java.js"></script>    
+</body>
+</html>
